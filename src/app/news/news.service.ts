@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { News } from './helpers/news.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class NewsService {
 
   constructor(private http: HttpClient) { }
 
-getNews(): Observable<any[]> {
+getNews(): Observable<News[]> {
   const url = `http://newsapi.org/v2/everything?q=programming&from=2021-02-12&sortBy=publishedAt&apiKey=${this.key}`;
 
   return this.http.get(url).pipe(
-      map((response): any[] => {
+      map((response): News[] => {
           return (response as any).articles;
       })
   );

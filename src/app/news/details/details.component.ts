@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { News } from '../helpers/news.model';
 import { NewsService } from '../news.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { NewsService } from '../news.service';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  news: any[] = [];
+  news: News[] = [];
 
   constructor(private newsService: NewsService) { }
 
