@@ -5,13 +5,15 @@ import { NewsRoutingModule } from './news-routing.module';
 import { ListingComponent } from './listing/listing.component';
 import { DetailsComponent } from './details/details.component';
 import { NewsService } from './news.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [ListingComponent, DetailsComponent],
   imports: [
     CommonModule,
-    NewsRoutingModule
+    NewsRoutingModule,
+    SharedModule
   ],
   providers: [NewsService]
 })

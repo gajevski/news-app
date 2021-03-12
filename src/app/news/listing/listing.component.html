@@ -1,1 +1,25 @@
-<pre>{{ news | json }}</pre>
+<div fxFlex="30"></div>
+<div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" class="wrapper">
+  <div *ngFor="let newsItem of news">
+
+    <div class="card">
+      <div class="card-image-container">
+        <img class="card-image" [src]="newsItem.urlToImage" alt="">
+      </div>
+      <div class="card-content">
+        <div class="card-creator">
+          <span class="card-creator-title">{{ newsItem.source.name }}</span>
+          <span>{{ newsItem.publishedAt }}</span>
+        </div>
+        <div class="card-title">
+          {{ (newsItem.title.length>15)? (newsItem.title | slice:0:15)+'..':(newsItem.title) }}
+        </div>
+        <div class="card-description">
+          {{ newsItem.description }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div fxFlex="30"></div>
