@@ -5,7 +5,19 @@
 
 .card-image {
   width: 400px;
-  height: auto;
+  max-height: 300px;
+}
+
+.card-image-container {
+  overflow: hidden;
+}
+
+.card-image {
+  transition: transform .5s ease;
+}
+
+.card-image:hover {
+  transform: scale(1.1);
 }
 
 .card-content {
