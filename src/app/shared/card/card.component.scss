@@ -1,0 +1,31 @@
+.card {
+  width: 400px;
+  min-height: 500px;
+}
+
+.card-image {
+  width: 400px;
+  height: auto;
+}
+
+.card-content {
+  margin-top: -50px;
+  margin-right: 30px;
+  padding: 35px;
+  background-color: #fff;
+  position: relative;
+}
+
+.card-creator {
+  margin-bottom: 20px;
+}
+
+.card-creator-title {
+  margin-right: 25px;
+  text-transform : uppercase;
+}
+
+.card-title {
+  margin-bottom: 20px;
+  font-size: 32px;
+}

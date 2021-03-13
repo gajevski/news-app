@@ -13,7 +13,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
 getNews(): Observable<News[]> {
-  const url = `http://newsapi.org/v2/everything?q=programming&from=2021-02-12&sortBy=publishedAt&apiKey=${this.key}`;
+  const url = `http://newsapi.org/v2/everything?q=programming&from=2021-03-13&sortBy=publishedAt&apiKey=${this.key}`;
 
   return this.http.get(url).pipe(
       map((response): News[] => {
