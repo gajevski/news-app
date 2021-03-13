@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { News } from '../helpers/news.model';
 import { NewsService } from '../news.service';
 
@@ -8,14 +9,11 @@ import { NewsService } from '../news.service';
   styleUrls: ['./listing.component.scss']
 })
 export class ListingComponent implements OnInit {
-  news: News[] = [];
+  news: Observable<News[]> = this.newsService.getNews();
 
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(res => {
-      this.news = res;
-    });
   }
 
 }

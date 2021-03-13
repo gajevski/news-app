@@ -1,5 +1,5 @@
 <div fxFlex="30"></div>
-<div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" class="wrapper">
+<div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" class="wrapper" *ngIf="(news | async) as news">
   <div *ngFor="let newsItem of news">
     <app-card [urlToImage]="newsItem.urlToImage" [creator]=" newsItem.source.name" [publishedAt]="newsItem.publishedAt"
       [title]="newsItem.title" [description]="newsItem.description"></app-card>
