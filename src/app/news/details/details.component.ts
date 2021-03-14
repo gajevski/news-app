@@ -13,7 +13,7 @@ export class DetailsComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.newsService.getNews().subscribe(res => {
+    this.newsService.getNews('programming').subscribe(res => {
       this.news = res;
     });
   }
