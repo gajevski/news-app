@@ -1,6 +1,7 @@
 .card {
   width: 400px;
   min-height: 500px;
+  cursor: pointer;
 }
 
 .card-image {
@@ -28,8 +29,9 @@
   position: relative;
 }
 
-.card-creator {
+.card-creator-container {
   margin-bottom: 20px;
+  font-size: 12px;
 }
 
 .card-creator-title {
@@ -39,5 +41,6 @@
 
 .card-title {
   margin-bottom: 20px;
-  font-size: 32px;
+  font-size: 28px;
+  text-transform : uppercase;
 }

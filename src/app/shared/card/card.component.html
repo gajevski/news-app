@@ -3,9 +3,9 @@
     <img class="card-image" [src]="urlToImage" onerror="this.src='assets/images/placeholder.jpg';" alt="">
   </div>
   <div class="card-content">
-    <div class="card-creator">
+    <div class="card-creator-container">
       <span class="card-creator-title">{{ creator }}</span>
-      <span>{{ publishedAt }}</span>
+      <span>{{ publishedAt | date:'mediumDate' }}</span>
     </div>
     <div class="card-title">
       {{ (title.length>15)? (title | slice:0:15)+'...':(title) }}
