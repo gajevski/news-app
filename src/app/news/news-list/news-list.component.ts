@@ -11,8 +11,7 @@ import { NewsService } from '../news.service';
 })
 export class NewsListComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
-  news: any;
-  search: string;
+  news: News[];
   isLoading: boolean;
   searchText: any;
 

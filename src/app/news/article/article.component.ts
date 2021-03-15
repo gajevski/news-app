@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { News } from '../helpers/news.model';
-import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-article',
@@ -42,7 +41,6 @@ export class ArticleComponent implements OnInit {
               in culpa qui officia deserunt mollit anim id est laborum.`,
     },
 ];
-  news: News[] = [];
   article$: any;
 
   constructor(public activatedRoute: ActivatedRoute, private router: Router) {
