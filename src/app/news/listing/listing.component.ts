@@ -15,20 +15,11 @@ export class ListingComponent implements OnInit {
   search: string;
   isLoading: boolean;
   searchText: any;
-  navigationExtras: NavigationExtras = {
-    state: {
-      transd: 'TRANS001',
-      workQueue: false,
-      services: 10,
-      code: '003'
-    }
-  };
+
   constructor(private newsService: NewsService, public router: Router) { }
 
   ngOnInit(): void {
-    this.newsService.getNews('tesla').subscribe(res => {
-      this.news = res;
-    });
+    this.getNews('tesla');
   }
 
  onSearch(): void {
