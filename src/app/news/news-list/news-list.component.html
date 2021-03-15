@@ -3,15 +3,18 @@
   <mat-spinner></mat-spinner>
 </div>
 <div fxLayout="column" *ngIf="!isLoading">
-  <mat-form-field class="form">
-    <input matInput placeholder="Search" #input [(ngModel)]="searchText" (keyup)="onSearch()">
-  </mat-form-field>
-<div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" class="wrapper">
-  <div *ngFor="let newsItem of news">
-    <app-card [urlToImage]="newsItem.urlToImage" [creator]=" newsItem.source.name" [publishedAt]="newsItem.publishedAt"
-      [title]="newsItem.title" [description]="newsItem.description" (click)="goToDetails(newsItem)"></app-card>
+  <form class="example-form">
+    <mat-form-field fxFlex="40" fxFlex.lt-md="100" class="form">
+      <input matInput placeholder="Search" #input [(ngModel)]="searchText" (keyup)="onSearch()" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  </form>
+  <div fxLayoutAlign="center center" fxLayout="row wrap" fxLayoutGap="10px" fxLayout.lt-md="column" class="wrapper">
+    <div *ngFor="let newsItem of news">
+      <app-card [urlToImage]="newsItem.urlToImage" [creator]=" newsItem.source.name"
+        [publishedAt]="newsItem.publishedAt" [title]="newsItem.title" [description]="newsItem.description"
+        (click)="goToDetails(newsItem)"></app-card>
+    </div>
   </div>
-</div>
-<div *ngIf="news.length === 0" class="search-error">No results found for "{{ searchText }}"</div>
+  <div *ngIf="news.length === 0" class="search-error">No results found for "{{ searchText }}"</div>
 </div>
 <div fxFlex="30"></div>
