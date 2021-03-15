@@ -1,0 +1,15 @@
+<div class="comments-card" fxFlex="100" fxLayoutAlign="center center">
+  <div fxLayout="row">
+    <div class="comments-image-container">
+      <img [src]="avatar" alt="" class="comment-image">
+    </div>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{ name }}</div>
+        <div>{{ date | date:'mediumDate' }}</div>
+      </div>
+      <div>{{ comment }}
+      </div>
+    </div>
+  </div>
+</div>

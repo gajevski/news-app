@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DetailsComponent } from './details/details.component';
-import { ListingComponent } from './listing/listing.component';
+import { ArticleComponent } from './article/article.component';
+import { NewsListComponent } from './news-list/news-list.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/news', pathMatch: 'full' },
-  { path: 'news', component: ListingComponent, data: {animation: 'News'} },
-  { path: 'article', component: DetailsComponent, data: {animation: 'Article'} },
+  { path: 'news', component: NewsListComponent, data: {animation: 'News'} },
+  { path: 'article', component: ArticleComponent, data: {animation: 'Article'} },
 ];
 
 @NgModule({

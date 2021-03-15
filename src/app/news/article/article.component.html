@@ -2,7 +2,8 @@
 <div class="container" fxLayout="column" fxFlex="70" fxFlex.lt-md="100" *ngIf="article$.newsItem as article">
   <img [src]="article.urlToImage" class="article-image" alt="">
   <div fxLayout="row">
-    <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxFlex="20" fxHide.lt-md>
+    <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxFlex="20"
+      fxHide.lt-md>
       <div>
         {{ article.source?.name }}
       </div>
@@ -13,7 +14,7 @@
         {{ article.publishedAt | date:'mediumDate' }}
       </div>
       <div class="comments-counter">
-        3 comments
+        {{ comments.length }} comments
       </div>
     </div>
     <div fxLayout="column" class="content-container" fxFlex="80" fxFlex.lt-md="100">
@@ -29,8 +30,8 @@
       <div>
         <div class="button-container" fxLayoutAlign="center center">
           <a [href]="article.url" target="_blank">
-          <button mat-flat-button color="warn">Read more</button>
-        </a>
+            <button mat-flat-button color="warn" class="read-action-btn">Read more</button>
+          </a>
         </div>
       </div>
     </div>
@@ -38,21 +39,8 @@
   <div class="comments-container" fxLayout="column">
     <div class="comments-header">3 Comments</div>
     <div *ngFor="let comment of comments">
-      <div class="comments-card" fxFlex="100" fxLayoutAlign="center center">
-        <div fxLayout="row">
-          <div class="comments-image-container">
-            <img [src]="comment.avatar" alt="" class="comment-image">
-          </div>
-          <div fxLayout="column" fxLayoutGap="10px">
-            <div fxLayout="row" fxLayoutAlign="space-between center">
-              <div>{{ comment.name }}</div>
-              <div>{{ comment.date | date:'mediumDate' }}</div>
-            </div>
-            <div>{{ comment.comment }}
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-comment [avatar]="comment.avatar" [name]="comment.name" [date]="comment.date" [comment]="comment.comment">
+      </app-comment>
     </div>
   </div>
 </div>

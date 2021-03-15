@@ -45,24 +45,14 @@
   margin-bottom: 25px;
 }
 
-.comments-image-container {
-  margin-right: 15px;
-}
-
-.comment-image {
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-}
-
-.comments-card {
-  margin-bottom: 25px;
-}
-
 .comments-counter {
   color: #f44336;
 }
 
-.content-container:hover > .content-title {
+.content-container:hover>.content-title {
   color: #f44336;
+}
+
+.read-action-btn {
+  border-radius: 20px;
 }

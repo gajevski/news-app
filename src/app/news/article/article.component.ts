@@ -6,11 +6,11 @@ import { News } from '../helpers/news.model';
 import { NewsService } from '../news.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss']
+  selector: 'app-article',
+  templateUrl: './article.component.html',
+  styleUrls: ['./article.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class ArticleComponent implements OnInit {
   public comments: any[] = [
     {
         name: 'Chris Nat',

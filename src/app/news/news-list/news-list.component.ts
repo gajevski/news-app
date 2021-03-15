@@ -6,10 +6,10 @@ import { News } from '../helpers/news.model';
 import { NewsService } from '../news.service';
 @Component({
   selector: 'app-listing',
-  templateUrl: './listing.component.html',
-  styleUrls: ['./listing.component.scss']
+  templateUrl: './news-list.component.html',
+  styleUrls: ['./news-list.component.scss']
 })
-export class ListingComponent implements OnInit {
+export class NewsListComponent implements OnInit {
   @ViewChild('input') input: ElementRef;
   news: any;
   search: string;
