@@ -1,5 +1,7 @@
 <div fxFlex="30"></div>
-<div *ngIf="isLoading">loading</div>
+<div class="loader" fxFlex="100" fxLayoutAlign="center center" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
+</div>
 <div fxLayout="column" *ngIf="!isLoading">
   <mat-form-field class="form">
     <input matInput placeholder="Search" #input [(ngModel)]="searchText" (keyup)="onSearch()">
@@ -10,5 +12,6 @@
       [title]="newsItem.title" [description]="newsItem.description" (click)="goToDetails(newsItem)"></app-card>
   </div>
 </div>
+<div *ngIf="news.length === 0" class="search-error">No results found for "{{ searchText }}"</div>
 </div>
 <div fxFlex="30"></div>
