@@ -5,7 +5,7 @@ import { ListingComponent } from './listing/listing.component';
 
 
 const routes: Routes = [
-  { path: 'details', component: DetailsComponent },
+  { path: 'article', component: DetailsComponent },
   { path: '', component: ListingComponent }
 ];
 

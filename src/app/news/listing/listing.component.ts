@@ -52,6 +52,6 @@ export class ListingComponent implements OnInit {
   }
 
   goToDetails(newsItem: any) {
-    this.router.navigate(['/details'], { state: { newsItem } } );
+    this.router.navigate(['/article'], { state: { newsItem } } );
     }
 }

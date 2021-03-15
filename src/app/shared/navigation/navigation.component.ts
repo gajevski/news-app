@@ -1,15 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
+  public article = false;
 
-  constructor() { }
+  constructor(router: Router) {
+    router.events.subscribe(() => {
+        if (router.url.startsWith('/article')) {
+            this.article = true;
+        } else {
+            this.article = false;
+        }
+    });
+}
 
-  ngOnInit(): void {
-  }
+public prepareRoute(outlet: RouterOutlet): any {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
+}
+
+public goBack(): void {
+    window.history.back();
+}
 
 }

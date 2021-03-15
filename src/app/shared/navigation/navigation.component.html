@@ -1,11 +1,11 @@
-<mat-toolbar class="news-app-toolbar mat-elevation-z4" color="default">
+<mat-toolbar class="news-app-toolbar" color="default">
   <mat-toolbar-row>
-      <button mat-icon-button class="news-app-menu" [matMenuTriggerFor]="menu"
+      <button *ngIf="!article" mat-icon-button class="news-app-menu" [matMenuTriggerFor]="menu"
           aria-label="icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
       </button>
 
-      <button mat-icon-button class="news-app-menu" aria-label="icon-button back">
+      <button *ngIf="article" (click)="goBack()" mat-icon-button class="news-app-menu" aria-label="icon-button back">
           <mat-icon>arrow_back</mat-icon>
       </button>
 
