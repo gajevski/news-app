@@ -2,7 +2,7 @@
 <div class="container" fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
   <img [src]="news[2].urlToImage" class="article-image" alt="">
   <div fxLayout="row">
-    <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxHide.lt-md>
+    <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxFlex="20" fxHide.lt-md>
       <div>
         {{ news[2].source.name }}
       </div>
@@ -10,13 +10,13 @@
         {{ news[2].author }}
       </div>
       <div>
-        {{ news[2].publishedAt }}
+        {{ news[2].publishedAt | date:'mediumDate' }}
       </div>
       <div>
         3 comments
       </div>
     </div>
-    <div fxLayout="column" class="content-container">
+    <div fxLayout="column" class="content-container" fxFlex="80" fxFlex.lt-md="100">
       <div class="content-title">
         {{ news[2].title }}
       </div>
@@ -46,7 +46,7 @@
           <div fxLayout="column" fxLayoutGap="10px">
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <div>{{ comment.name }}</div>
-              <div>{{ comment.date  | date:'mediumDate' }}</div>
+              <div>{{ comment.date | date:'mediumDate' }}</div>
             </div>
             <div>{{ comment.comment }}
             </div>
