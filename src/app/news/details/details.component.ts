@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { News } from '../helpers/news.model';
 import { NewsService } from '../news.service';
 
@@ -40,13 +43,16 @@ export class DetailsComponent implements OnInit {
     },
 ];
   news: News[] = [];
+  article$: any;
 
-  constructor(private newsService: NewsService) { }
+  constructor(public activatedRoute: ActivatedRoute, private router: Router) {
+    this.article$ = this.router.getCurrentNavigation().extras.state;
+   }
 
   ngOnInit(): void {
-    this.newsService.getNews('programming').subscribe(res => {
-      this.news = res;
-    });
+    if (!this.article$) {
+      this.router.navigateByUrl('/');
+    }
   }
 
 }

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { fromEvent, Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
 import { News } from '../helpers/news.model';
@@ -14,8 +15,15 @@ export class ListingComponent implements OnInit {
   search: string;
   isLoading: boolean;
   searchText: any;
-
-  constructor(private newsService: NewsService) { }
+  navigationExtras: NavigationExtras = {
+    state: {
+      transd: 'TRANS001',
+      workQueue: false,
+      services: 10,
+      code: '003'
+    }
+  };
+  constructor(private newsService: NewsService, public router: Router) { }
 
   ngOnInit(): void {
     this.newsService.getNews('tesla').subscribe(res => {
@@ -43,4 +51,7 @@ export class ListingComponent implements OnInit {
     });
   }
 
+  goToDetails(newsItem: any) {
+    this.router.navigate(['/details'], { state: { newsItem } } );
+    }
 }

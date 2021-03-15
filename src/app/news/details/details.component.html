@@ -1,16 +1,16 @@
 <div fxFlex="15" class="shared-margin" fxHide.lt-md></div>
-<div class="container" fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
-  <img [src]="news[2].urlToImage" class="article-image" alt="">
+<div class="container" fxLayout="column" fxFlex="70" fxFlex.lt-md="100" *ngIf="article$.newsItem as article">
+  <img [src]="article.urlToImage" class="article-image" alt="">
   <div fxLayout="row">
     <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxFlex="20" fxHide.lt-md>
       <div>
-        {{ news[2].source.name }}
+        {{ article.source?.name }}
       </div>
       <div>
-        {{ news[2].author }}
+        {{ article.author }}
       </div>
       <div>
-        {{ news[2].publishedAt | date:'mediumDate' }}
+        {{ article.publishedAt | date:'mediumDate' }}
       </div>
       <div>
         3 comments
@@ -18,17 +18,17 @@
     </div>
     <div fxLayout="column" class="content-container" fxFlex="80" fxFlex.lt-md="100">
       <div class="content-title">
-        {{ news[2].title }}
+        {{ article.title }}
       </div>
       <div class="content-description">
-        {{ news[2].description }}
+        {{ article.description }}
       </div>
       <div class="content-content">
-        {{ news[2].content }}
+        {{ article.content }}
       </div>
       <div>
         <div class="button-container" fxLayoutAlign="center center">
-          <a [href]="news[2].url" target="_blank">
+          <a [href]="article.url" target="_blank">
           <button mat-flat-button color="warn">Read more</button>
         </a>
         </div>
