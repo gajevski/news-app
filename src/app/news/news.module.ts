@@ -6,14 +6,14 @@ import { ListingComponent } from './listing/listing.component';
 import { DetailsComponent } from './details/details.component';
 import { NewsService } from './news.service';
 import { SharedModule } from '../shared/shared.module';
-
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [ListingComponent, DetailsComponent],
   imports: [
     CommonModule,
     NewsRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [NewsService]
 })
