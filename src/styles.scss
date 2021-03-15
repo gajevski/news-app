@@ -3,4 +3,12 @@ $custom-typography: mat-typography-config($font-family: '"Montserrat", sans-seri
 @include mat-core($custom-typography);
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Montserrat', sans-serif; }
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+}
