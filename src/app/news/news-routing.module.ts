@@ -5,8 +5,9 @@ import { ListingComponent } from './listing/listing.component';
 
 
 const routes: Routes = [
-  { path: 'article', component: DetailsComponent },
-  { path: '', component: ListingComponent }
+  { path: '', redirectTo: '/news', pathMatch: 'full' },
+  { path: 'news', component: ListingComponent, data: {animation: 'News'} },
+  { path: 'article', component: DetailsComponent, data: {animation: 'Article'} },
 ];
 
 @NgModule({
