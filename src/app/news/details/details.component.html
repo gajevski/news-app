@@ -1,1 +1,59 @@
-<pre>{{ news | json }}</pre>
+<div fxFlex="15" class="shared-margin" fxHide.lt-md></div>
+<div class="container" fxLayout="column" fxFlex="70" fxFlex.lt-md="100">
+  <img [src]="news[2].urlToImage" class="article-image" alt="">
+  <div fxLayout="row">
+    <div fxLayout="column" fxLayoutAlign="start end" fxLayoutGap="15px" class="creator-container" fxHide.lt-md>
+      <div>
+        {{ news[2].source.name }}
+      </div>
+      <div>
+        {{ news[2].author }}
+      </div>
+      <div>
+        {{ news[2].publishedAt }}
+      </div>
+      <div>
+        3 comments
+      </div>
+    </div>
+    <div fxLayout="column" class="content-container">
+      <div class="content-title">
+        {{ news[2].title }}
+      </div>
+      <div class="content-description">
+        {{ news[2].description }}
+      </div>
+      <div class="content-content">
+        {{ news[2].content }}
+      </div>
+      <div>
+        <div class="button-container" fxLayoutAlign="center center">
+          <a [href]="news[2].url" target="_blank">
+          <button mat-flat-button color="warn">Read more</button>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="comments-container" fxLayout="column">
+    <div class="comments-header">3 Comments</div>
+    <div *ngFor="let comment of comments">
+      <div class="comments-card" fxFlex="100" fxLayoutAlign="center center">
+        <div fxLayout="row">
+          <div class="comments-image-container">
+            <img [src]="comment.avatar" alt="" class="comment-image">
+          </div>
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div>{{ comment.name }}</div>
+              <div>{{ comment.date  | date:'mediumDate' }}</div>
+            </div>
+            <div>{{ comment.comment }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div fxFlex="15" class="shared-margin" fxHide.lt-md></div>
